@@ -278,3 +278,4 @@ run_it
 
 meteor npm install
 meteor update
+meteor update
