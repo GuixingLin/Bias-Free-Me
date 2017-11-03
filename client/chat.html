@@ -1,0 +1,20 @@
+<template name="chathome">
+    {{> header}}
+    <h1><center>Chatting Room</center></h1>
+    <div align="center">
+        <a href="chat?chatter=Deep Blue&score=-200">Chat with Deep Blue</a> 
+        <a href="chat?chatter=Dark Red&score=200">Chat with Dark Red</a>
+   </div>
+</template>
+
+
+<template name="chat">
+    {{> header}}
+    <h1><center>Chatting Room</center></h1>
+    <div align="center">
+        <h3>Chatting with: <span id="chatteruname"></span>, score: <span id="chatterscore"></span></h3>
+        <div class="chat" id="chat"></div>
+        <input style="width:250px" id="chattosend"/>
+        <button id="chatsend">send</button>
+   </div>
+</template>

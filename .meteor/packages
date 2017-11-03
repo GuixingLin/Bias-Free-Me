@@ -21,3 +21,5 @@ accounts-ui@1.2.0
 accounts-base@1.4.0
 accounts-twitter@1.4.0
 d3js:d3
+iron:router
+session
