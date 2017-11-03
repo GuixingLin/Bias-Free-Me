@@ -1,0 +1,2 @@
+export ROOT_URL="http://localhost"
+meteor --port localhost:8000

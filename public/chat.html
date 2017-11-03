@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<style>
+.chat
+{
+border:1px solid;
+border-color:#c5c5c5;
+height:400px;
+width:300px;
+overflow-y: scroll;
+}
+</style>
+
+<body>
+    <h1><center>Chatting Room</center></h1>
+    <div align="center">
+        <div class="chat" id="chat"></div>
+        <input style="width:250px" id="chattosend"/>
+        <button onclick="chat()">send</button>
+   </div>
+</body>
+<script>
+reply=["haha", "23333", "Interesting", "orz"]
+function chat(){
+    toSend=document.getElementById("chattosend").value;
+    chatter="HHH"
+    chatTextArea=document.getElementById("chat");
+    chatTextArea.innerHTML+="<span style='float:left;color:red'>You: <font color='black'>"+toSend+"</color></span><br/>";
+    chatTextArea.innerHTML+="<span style='float:right;color:blue'>"+chatter+": <font color='black'>"+reply[Math.floor(Math.random()*3+0.99)]+"</color></span><br/>";
+    chatTextArea.scrollTop = chatTextArea.scrollHeight;
+    document.getElementById("chattosend").value="";
+}
+</script>
+
+</html>

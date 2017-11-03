@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div align="center">
+        <p>Welcom to "Bias Free Me"</p>
+            <form id="loginform">
+                <p align="center">Username: <input type="text" id="uname" /></p>
+                <p align="center">Password: <input type="password" id="pword" /></p>
+            </form>
+        <p><button type="button">Sign up</button><button type="button" onclick="login()">Login</button></p>
+   </div>
+</body>
+
+<script>
+function login(){
+    uname=document.getElementById("uname").value;
+    //confirm(uname);
+    console.log(document.getElementById("score").style.color='blue');
+    //window.location.href="http://www.baidu.com"; 
+}
+
+</script>
+
+</html>
