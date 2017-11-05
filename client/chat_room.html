@@ -1,0 +1,15 @@
+<template name="chat_room">
+    <span style="float:right"><button id = "end_chat"> End Chat </button></span><br/>
+    <h1><center>Chatting Room</center></h1>
+    <div align="center">
+        <h3>Chatting with: <span id="chat_with_whom">{{get_chatter}}</span>
+        	<br>
+        	Estimate Score Change: <span id="chat_score_estimation">{{get_addition_score}} </span>
+        </h3>
+        <div class="chat" id="chat"></div>
+        <input style="width:250px" id="chat_textbox"/>
+        <button id="chat_send">send</button>
+   </div>
+</template>
+
+

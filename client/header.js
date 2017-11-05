@@ -1,4 +1,8 @@
 import { Session } from 'meteor/session'
+import { Mongo } from 'meteor/mongo'
+
+Users = Mongo.Collection.get('users');
+
 Template.header.events({
 
 });
@@ -11,9 +15,16 @@ function getScoreHTML(score){
 	return '<font color="'+color+'"> '+scoreStr+'</font>';
 }
 
-Template.header.onRendered(function (){
-	document.getElementById('uname').innerText=Session.get('uname');
-	document.getElementById('score').innerHTML=getScoreHTML(Session.get('score'));
+Template.header.helpers({
+	'show_username': function(){
+		return Session.get('username');
+	},
+	'show_bias_score': function(){	
+		return Users.findOne({username: Session.get('username')}).profile.bias_score;
+	}
+});
+
+Template.header.onCreated(function (){
 });
 
 

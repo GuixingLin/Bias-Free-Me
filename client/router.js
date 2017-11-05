@@ -3,17 +3,29 @@ import { Session } from 'meteor/session'
 import { Router, RouteController } from 'meteor/iron:router';
 
 Router.route('/', function () {
-	console.log("homepage")
-	if(Session.get('login')!=true)
-		this.render('login');
+	if (Session.get('isLogin'))
+		Router.go('/home');
 	else
-		this.render('home');
+		Router.go('/login');
 });
 
-Router.route('/chathome');
+Router.route('/login', function() {
+	this.render('login_register');
+});
+
+Router.route('/home', function() {
+	this.render('home');
+});
+
+Router.route('/chat_home', function() {
+	this.render('chat_home')
+});
 
 
 Router.route('/chat', function () {
   // render the Home template with a custom data context
-  this.render('chat');
+  this.render('chat_room');
 });
+
+
+Meteor.subscribe('Users');

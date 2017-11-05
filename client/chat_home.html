@@ -1,0 +1,26 @@
+<template name = "chat_home"> 
+	{{> header}}
+	<div class = "container">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <ul class="user-profiles-list-basic">
+            {{#each online_users}}
+		      {{> name_tag}}
+            {{/each}}
+        </ul>
+	</div>
+</template>
+
+<template name = "name_tag">
+        <li>
+            <a href="" class="user-avatar">
+                <img src="http://cdn3-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-21.jpg" width="80" height="80" alt="Profile of Adeline Yong" />
+            </a>
+            <p>
+                <a href="chat?chatter={{username}}"> User: {{username}} </a>
+                <br>
+                <a href="chat?chatter={{username}}"> Bias Score: {{profile.bias_score}} </a>
+            </p>
+        </li>
+</template>
+
+
