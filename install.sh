@@ -279,3 +279,8 @@ run_it
 meteor npm install
 meteor update
 meteor update
+
+meteor npm install --save babel-runtime
+meteor add dburles:mongo-collection-instances
+meteor add accounts-password
+meteor remove autopublish

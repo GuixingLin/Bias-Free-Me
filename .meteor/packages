@@ -15,7 +15,6 @@ es5-shim@4.6.15                # ECMAScript 5 compatibility for older browsers
 ecmascript@0.9.0              # Enable ECMAScript2015+ syntax in app code
 shell-server@0.3.0            # Server-side component of the `meteor shell` command
 
-autopublish@1.0.7             # Publish all data to the clients (for prototyping)
 service-configuration@1.0.11
 accounts-ui@1.2.0
 accounts-base@1.4.0
@@ -23,3 +22,5 @@ accounts-twitter@1.4.0
 d3js:d3
 iron:router
 session
+dburles:mongo-collection-instances
+accounts-password
