@@ -20,8 +20,8 @@ Template.login_register.events({
 		});
 		// //debug purpose
 		// Accounts.createUser({
-		//     username: "lincoln",
-		//     password: "lincoln",
+		//     username: "archer",
+		//     password: "archer",
 		//     profile: { bias_score: -10, points: 10}
 		// }, function(error){
 		// 	if (error){
@@ -30,8 +30,8 @@ Template.login_register.events({
 		// 	}
 		// });
 		// Accounts.createUser({
-		//     username: "yd",
-		//     password: "yd",
+		//     username: "saber",
+		//     password: "saber",
 		//     profile: { bias_score: 100, points: 100}
 		// }, function(error){
 		// 	if (error){
