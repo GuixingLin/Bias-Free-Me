@@ -31,6 +31,20 @@ Router.route('/new_chat', function(){
 	this.render('new_chat_room');
 });
 
+Router.route('/news', function(){
+	this.render('news');
+});
 
+Router.route('/news1', function(){
+	this.render('news1');
+});
+
+Router.route('/news2', function(){
+	this.render('news2');
+});
+
+Router.route('/news3', function(){
+	this.render('news3');
+});
 Meteor.subscribe('Users');
 Meteor.subscribe('Messages');
