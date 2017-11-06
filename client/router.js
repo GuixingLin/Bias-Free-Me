@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { Session } from 'meteor/session'
+import { Session } from 'meteor/session';
 import { Router, RouteController } from 'meteor/iron:router';
 
 Router.route('/', function () {
@@ -27,5 +27,10 @@ Router.route('/chat', function () {
   this.render('chat_room');
 });
 
+Router.route('/new_chat', function(){
+	this.render('new_chat_room');
+});
+
 
 Meteor.subscribe('Users');
+Meteor.subscribe('Messages');

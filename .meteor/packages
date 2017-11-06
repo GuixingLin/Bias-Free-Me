@@ -24,3 +24,4 @@ iron:router
 session
 dburles:mongo-collection-instances
 accounts-password
+twbs:bootstrap
