@@ -20,15 +20,8 @@ Template.header.helpers({
 		return Session.get('username');
 	},
 	'show_bias_score': function(){	
-		score=Users.findOne({username: Session.get('username')}).profile.bias_score;
-		return score;
-	},
-	'get_score_color': function(){
-		score=Users.findOne({username: Session.get('username')}).profile.bias_score;
-		if(score>=10) return "red";
-		else if(score<=-10) return "blue";
-		return "gray";
-	}	
+		return Users.findOne({username: Session.get('username')}).profile.bias_score;
+	}
 });
 
 Template.header.onCreated(function (){

@@ -5,15 +5,24 @@
       <div class="col-md-12">
         <div class="panel panel-info">
           <div class="panel-heading">
-            GROUP CHAT
+            <table width= "100%">
+              <tr>
+                <td>Chatting with: <span id="chat_with_whom">{{get_chatter}}</span></td>
+                <td>Estimate Score Change: <span id="chat_score_estimation">{{get_addition_score}}</span></td>
+              </tr>
+            </table>
           </div>
           <div class="panel-body">
-            <ul class="media-list">
+            <div class="media-list" id="chat_area">
               <!-- message template -->
               {{#each messages}}
                 {{> message}}
               {{/each}}
-            </ul>
+              
+              {{#each end_chat}}  
+                {{> end_message}}
+              {{/each}}
+            </div>
           </div>
           {{#if currentUser}}
           <form class="new-message">
@@ -22,6 +31,7 @@
                 <input type="text" name="text" class="form-control" placeholder="Enter Message" />
                 <span class="input-group-btn">
                   <button class="btn btn-info send" type="submit">SEND</button>
+                  <button id = "end_chat" class="btn btn-warning">End Chat</button>
                 </span>
               </div>
             </div>
@@ -31,4 +41,8 @@
       </div>
     </div>
   </div>
+</template>
+
+<template name="end_message">
+  {{end_chat}}
 </template>

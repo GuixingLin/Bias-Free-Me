@@ -1,17 +1,25 @@
-<template name = "news">
-    {{> header}}
-    <center>
-	<div>
-		<a href="news1">news1</a>
-		Bias Score: 10
-	</div>
-	<div>
-		<a href="news2">news2</a>
-		Bias Score: -10
-	</div>
-	<div>
-		<a href="news3">news3</a>
-		Bias Score: 0
-	</div>
-    </center>
+<template name = "news"> 
+	{{> header}}
+	<ul class="article-list-basic">
+		{{#each getArticles}}
+			{{> article}}
+		{{/each}}
+    </ul>
+</template>
+
+
+<template name = "article">
+	<li>
+        <a href="#">
+            <img src="/images/sands-of-life.jpg" alt="Industrial Mech" />
+        </a>
+        <div>
+            <h2><a href="{{link}}">{{title}}</a>  <br> Bias Score: {{bias_score}} </h2>
+            
+            <p>
+            	Come, night, come, Romeo, come, thou day in night, For thou wilt lie upon the wings of night Whiter than new snow on a raven's back. Come, gentle night, come, loving, black-browed night,
+			</p>
+            <a href="#" class="haveRead" id="have_read">Have Read</a>
+        </div>
+    </li>
 </template>
