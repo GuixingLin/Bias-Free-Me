@@ -22,7 +22,7 @@ Template.login_register.events({
 		Accounts.createUser({
 		    username: "archer",
 		    password: "archer",
-		    profile: { bias_score: -10, points: 10}
+		    profile: { bias_score: -100, points: 100}
 		}, function(error){
 			if (error){
 				console.log(error.reason);

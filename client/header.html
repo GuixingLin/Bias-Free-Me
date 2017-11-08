@@ -1,6 +1,6 @@
 <template name="header">
   <span>Hello {{show_username}} </span> <br>
-  <span> Your score is: {{show_bias_score}}</span>
+  <span> Your score is: <span style="color:{{get_score_color}}">{{show_bias_score}}</span></span>
   <span style="float:right">
   	<a href="news" >News</a> 
   	<a  href="chat_home" >Chat</a>
