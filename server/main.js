@@ -19,7 +19,7 @@ Meteor.publish('current_user_info', function(){
 })
 
 Meteor.startup(() => {
-
+	Users.remove({});
 });
 
 Meteor.methods({
