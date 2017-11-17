@@ -16,3 +16,4 @@ Need to do:
 ##
 Rename change_me_to_SETUPJS to “Setup.js”
 After “bash install.sh”, run “mongo localhost:3001 < Setup.js”.
+After running the command, remove the JS file from the directory otherwise meteor will report error as the JS file cannot be properly compiled.
