@@ -3,66 +3,83 @@ import { Session } from 'meteor/session';
 import { Router, RouteController } from 'meteor/iron:router';
 
 Router.route('/', function () {
-	if (Session.get('isLogin')){
-		if (Session.get('isSideChosen'))
-			Router.go('/home');
-		else
-			Router.go('/topic_side_submission');
-	}
+	if (retrieve_username_session())
+		Router.go('/home');
 	else
 		Router.go('/login');
 });
 
 Router.route('/login', function() {
-	if (!Session.get('username'))
-		Router.go('/login');
-	this.render('login_register');
+	if (retrieve_username_session())
+		Router.go('/topic_side_submission');
+	else
+		this.render('login_register');
 });
 
 Router.route('/home', function() {
-	if (!Session.get('username'))
+	if (!retrieve_username_session())
 		Router.go('/login')
-	else 
+	else
 		this.render('home');
 });
 
 Router.route('/topic_side_submission', function(){
-	if (!Session.get('username'))
+	if (!retrieve_username_session())
 		Router.go('/login')
 	else 
-	this.render('topic_side_submission');
+		this.render('topic_side_submission');
 });
 
 Router.route('/chat_home', function() {
-	if (!Session.get('username'))
+	if (!retrieve_username_session())
 		Router.go('/login')
 	else 
-	this.render('chat_home');
+		this.render('chat_home');
 });
 
 Router.route('/new_chat', function(){
-	if (!Session.get('username'))
+	if (!retrieve_username_session())
 		Router.go('/login')
 	else 
-	this.render('new_chat_room');
+		this.render('new_chat_room');
 });
 
 Router.route('/news', function(){
-	if (!Session.get('username'))
+	if (!retrieve_username_session())
 		Router.go('/login')
 	else 
-	this.render('news');
+		this.render('news');
 });
 
 Router.route('/topic_selection', function(){
-	if (!Session.get('username'))
+	if (!retrieve_username_session())
 		Router.go('/login')
 	else 
-	this.render('topic_selection');
+		this.render('topic_selection');
 });
 
+Router.route('/logout', function(){
+	Meteor.logout();
+	Router.go('/');
+});
+
+Meteor.startup(function(){
+ $.getScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', function(){});
+});
+
+var retrieve_username_session = function(){
+	if (Meteor.userId() != null){
+		if (!Session.get("username")){
+			Session.set("username", Meteor.user().username);
+		}
+		return true;
+	}
+	return false;
+}
 
 Meteor.subscribe('Users');
 Meteor.subscribe('Messages');
 Meteor.subscribe('EndChatRequests');
 Meteor.subscribe('News');
+Meteor.subscribe('Topics');
+Meteor.subscribe('TopicsList');

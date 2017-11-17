@@ -25,3 +25,5 @@ session
 dburles:mongo-collection-instances
 accounts-password
 twbs:bootstrap
+fortawesome:fontawesome
+peppelg:bootstrap-3-modal

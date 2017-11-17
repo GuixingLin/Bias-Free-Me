@@ -11,22 +11,18 @@ Template.login_register.events({
 		Accounts.createUser({
 		    username: username,
 		    password: password,
-		    profile: { bias_score: 0, points: 0, topics:[]}
+		    profile: { bias_score: 0}
 		}, function(error){
 			if (error){
 				console.log(error.reason);
 				return;
 			}
 		});
-		//debug purpose
+		//dummy users
 		Accounts.createUser({
-		    username: "archer",
-		    password: "archer",
-		    profile: { bias_score: -89, points: 100, 
-		    	topics:[
-		    		{topic_name: "How do you like cat", topic_side: "Negative"}
-		    	]
-		    }
+		    username: "caster",
+		    password: "caster",
+		    profile: { bias_score: 50}
 		}, function(error){
 			if (error){
 				console.log(error.reason);
@@ -36,19 +32,14 @@ Template.login_register.events({
 		Accounts.createUser({
 		    username: "saber",
 		    password: "saber",
-		    profile: { bias_score: 100, points: 100, 
-		    	topics:[
-		    		{topic_name: "How do you like cat", topic_side: "Negative"}
-		    	]
-		    }
+		    profile: { bias_score: -50}
 		}, function(error){
 			if (error){
 				console.log(error.reason);
 				return;
 			}
 		});
-		Meteor.call("insertNews" ,"NY Times", "https://www.nytimes.com/", 30);
-		Meteor.call("insertNews" ,"WSJ", "https://www.wsj.com/", -30);
+		Session.set('username', username);
 	},
   	'click #login_button': function(event){
   		event.preventDefault();
@@ -60,7 +51,6 @@ Template.login_register.events({
 				return;
 			}
 			console.log("successfully logged in");
-			Session.set('isLogin', true);
 			Session.set('username', username);
 			//Router.go('/home');
 			Router.go('/topic_side_submission');

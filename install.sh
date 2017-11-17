@@ -284,3 +284,7 @@ meteor npm install --save babel-runtime
 meteor add dburles:mongo-collection-instances
 meteor add accounts-password
 meteor remove autopublish
+meteor add twbs:bootstrap
+meteor add fortawesome:fontawesome
+meteor add peppelg:bootstrap-3-modal
+

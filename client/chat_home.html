@@ -1,26 +1,52 @@
 <template name = "chat_home"> 
-	{{> header}}
-	<div class = "container">
+    {{> header}}
+    <div class = "container">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
         <ul class="user-profiles-list-basic">
             {{#each online_users}}
-		      {{> name_tag}}
+              {{> name_tag}}
             {{/each}}
         </ul>
-	</div>
+    </div>
 </template>
 
 <template name = "name_tag">
         <li>
-            <a href="" class="user-avatar">
+            <a href="new_chat?chatter={{username}}" class="user-avatar">
                 <img src="http://cdn3-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-21.jpg" width="80" height="80" alt="Profile of Adeline Yong" />
             </a>
-            <p>
-                <a href="new_chat?chatter={{username}}"> User: {{username}} </a>
-                <br>
-                <a href="new_chat?chatter={{username}}"> Bias Score: {{profile.bias_score}} </a>
-            </p>
+            <div class="info">
+                <p>
+                    <a href="new_chat?chatter={{username}}" style="font-family: Courier; font-size:18pt; color:black">{{username}} </a>
+                    <br>
+                    <a href="new_chat?chatter={{username}}"  style="font-family: Courier; font-size:14pt; color:black"> Bias: {{profile.bias_score}} </a>
+                </p>
+            </div>
+            <div class = "topics">
+                <p style="font-family: Trebuchet MS; font-size:11pt; color:black" > 
+                    <strong style = "font-family: Courier; font-size:12pt">{{username}}</strong> 
+                    thinks differently on:
+                </p>
+                {{#each get_topics_list username}}
+                    {{> topic_entry}}
+                {{/each}}        
+            </div>
+            
         </li>
+</template>
+
+
+<template name = "topic_entry">
+        <span style="font-family: Comic Sans MS; font-size:14pt; color:grey; float:left">
+            <small> {{topicName}} </small> 
+        </span>
+        <br>
+        <span style="font-family: Times; float:right" class = "text-warning">
+            <a href="new_chat?chatter={{username}}&topicName={{topicName}}" style="text-decoration: none;"> 
+                <small> Chat about it</small> 
+            </a>
+        </span>
+        <br>
 </template>
 
 

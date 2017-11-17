@@ -4,9 +4,9 @@ import { Mongo } from 'meteor/mongo';
 Messages = new Mongo.Collection('messages');
 EndChatRequests = new Mongo.Collection('endChatRequests');
 News = new Mongo.Collection('news');
-
 Users = Mongo.Collection.get('users');
-
+Topics = new Mongo.Collection('topics');
+TopicsList = new Mongo.Collection('topicsList');
 
 Meteor.publish('Users', function(){
     return Users.find({});
@@ -26,6 +26,14 @@ Meteor.publish('current_user_info', function(){
 
 Meteor.publish('News', function(){
 	return News.find({});
+});
+
+Meteor.publish('Topics', function(){
+	return Topics.find({});
+});
+
+Meteor.publish('TopicsList', function(){
+	return TopicsList.find({});
 });
 
 Meteor.startup(() => {
@@ -67,19 +75,11 @@ Meteor.methods({
 			EndChatRequests.remove({roomNumber:roomNumber});
 		}
 	},
-	insertNews: function(title, link, bias_score){
-		News.insert({title:title, link:link, bias_score:bias_score});
-	},
-	update_topic_side: function(username, topic_name, topic_side){
-		var topics = Users.findOne({username:username}).profile.topics;
-		console.log(topics);
-		if (topics.length != 0){
-			for (var pair in topics){
-				if (pair.topic_name == topic_name)
-					return;
-			}
+	update_topics: function(username, topicName, topicSide){
+		if (Topics.findOne({"username":username, "topicName":topicName})){
+			Topics.update({"username":username, "topicName":topicName},{$set:{"side":topicSide}});
 		}else{
-			Users.update({username:username},{$push: {"profile.topics": {$each: [{topic_name, topic_side}]}}});
+			Topics.insert({"username":username, "topicName": topicName, "side": topicSide});
 		}
 	}
 });

@@ -1,14 +1,43 @@
 <template name = "new_chat_room">
+  {{> header}}
   <div class="container">
     <div class="row">
-      <h3 class="text-center" >Chat Room</h3>
+      <!-- <h3 class="text-center" >Chat</h3> -->
       <div class="col-md-12">
         <div class="panel panel-info">
           <div class="panel-heading">
             <table width= "100%">
               <tr>
-                <td>Chatting with: <span id="chat_with_whom">{{get_chatter}}</span></td>
-                <td>Estimate Score Change: <span id="chat_score_estimation">{{get_addition_score}}</span></td>
+                <td style="text-align:center;"> 
+                  <span style="float:left">
+                    <strong>Chatting With: </strong>
+                    <span id="chat_with_whom" style="font-family: Comic Sans MS; font-size: 12pt; color:grey">{{get_chatter}}
+                    </span>
+                  </span>
+
+                  <span style="display: inline-block; margin:0 auto;">
+                    <strong> Topic Picked: </strong>
+                    <span id="picked_topic" style="font-family: Comic Sans MS; font-size: 12pt; color:grey">{{get_topic}}
+                    </span>
+                    <br>
+                    <a href="#" id="get_suggested_topics" style="text-decoration: none; font-family: Comic Sans MS; font-size: 9pt; color:black">
+                      Other suggested topics <i class="fa fa fa-newspaper-o" aria-hidden="true"></i>
+                    </a>
+                  </span>
+
+                  <span style="float:right">
+
+                    <strong>Estimated Score Change: </strong>
+                    <span id="chat_score_estimation" style="font-family: Comic Sans MS; font-size: 12pt; color:grey">
+                      {{get_addition_score}}
+                    </span>
+                    <br>
+                    <a href="#" id="get_score_change_explanation" style="text-decoration: none;font-family: Comic Sans MS; font-size: 9pt; color:black">
+                      How is the score change calculated <i class="fa fa-question-circle" aria-hidden="true"></i>
+                    </a>
+                  </span>
+
+                </td>
               </tr>
             </table>
           </div>

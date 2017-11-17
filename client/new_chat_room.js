@@ -18,6 +18,12 @@ Template.new_chat_room.helpers({
   },
   'end_chat': function(){
     return EndChatRequests.find({roomNumber:roomNumber});
+  },
+  'get_topic': function(){
+    if (topicName == undefined || topicName == null)
+      return "NA"
+    else
+      return topicName;
   }
 });
 
@@ -34,10 +40,8 @@ Template.new_chat_room.events({
 
     // Insert a message into the collection
     Meteor.call('insert_message', text, Session.get('username'), roomNumber);
-
     // Clear form
     target.text.value = '';
-
     // scroll to last message
     chatTextArea = document.getElementById("chat_area");
     chatTextArea.scrollTop = (chatTextArea.scrollHeight);
@@ -48,11 +52,20 @@ Template.new_chat_room.events({
     event.preventDefault();
     console.log("end chat");
     housekeeping(roomNumber);
+  },
+
+  'click #get_suggested_topics': function(event){
+    Modal.show("suggested_topics");
+  },
+
+  'click #get_score_change_explanation': function(event){
+     Modal.show("suggested_topics");
   }
 });
 
 Template.new_chat_room.onCreated(function (){
   chatter = Router.current().params.query.chatter;
+  topicName = Router.current().params.query.topicName;
   //calculate bias score
   chatter_bias_score = Users.findOne({username: chatter}).profile.bias_score;
   current_user_bias_score = Users.findOne({username: Session.get('username')}).profile.bias_score;
@@ -87,8 +100,7 @@ String.prototype.hashCode = function(){
 
 var housekeeping = function (roomNumber){
   Meteor.call("housekeeping", roomNumber, Session.get('username'), chatter);
-}
-
+};
 
 Template.end_message.helpers({
   'end_chat': function(){

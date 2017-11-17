@@ -4,17 +4,24 @@ import { Session } from 'meteor/session'
 import { Mongo } from 'meteor/mongo'
 import { Meteor } from 'meteor/meteor';
 
+TopicsList = new Mongo.Collection("topicsList");
+Topics = new Mongo.Collection("topics");
+
+Template.topic_side_submission.helpers({
+	get_topics_list: function(){
+		return TopicsList.find({});
+	}
+});
 
 
 Template.topic_side_submission.events({
-	'click #topic_side_submit': function(event) {
+	'click #topic_side_submit_button': function(event) {
 		event.preventDefault();
-		var selection = $('input[name=topic]:checked').val();
-		var topic_name = $('#topic_name').text();
-		console.log(selection);
-		console.log(topic_name);
-		Meteor.call('update_topic_side', Session.get('username'), topic_name, selection);
+		$.each($('input:radio:checked'), function(){
+			Meteor.call('update_topics', Session.get('username'), $(this).attr('name'), $(this).val());
+		});
+		
 		Session.set("isSideChosen", true);
 		Router.go('/home');
 	}
-})
+});
