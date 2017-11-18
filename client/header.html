@@ -1,11 +1,33 @@
 <template name="header">
 
-  <span>Hello {{show_username}} </span> <br>
-  <span> Your score is: {{show_bias_score}}</span>
-  <span style="float:right">
-  	<a href="news" >News</a> 
-  	<a  href="chat_home" >Chat</a>
-  	<a href = "logout">Logout</a>
-  </span><br/>
+   <div class="container header">
+
+		<nav class="navbar navbar-inverse navbar-static-top">
+		  <div class="container-fluid">
+		    <div class="navbar-header" style="width:20%">
+		      <a class="navbar-brand" href="home">Bias Free Me</a>
+		    </div>
+		    <ul class="nav navbar-nav" style="width:80%">
+		      <li class="active"><a href="home">Home</a></li>
+		      <li><a href="chat_home">Chat</a></li>
+		      <li><a href="news">News</a></li>
+		      <li style="float:right"><a href="Logout" style="float:right">Logout</a></li>
+		    </ul>
+		  </div>
+		</nav>
+
+		<nav class = "side_nav">
+		  <ul>
+		    <li><span style="font-family: Verdana; font-size: 11pt"><strong>User: </strong>{{show_username}}</span></li>
+		    <li><span style="font-family: Verdana; font-size: 11pt"><strong>Bias Score: </strong>{{show_bias_score}}</span></li>
+		  </ul>
+		</nav>
+
+		<div class = "content">
+		  	{{> yield}}
+		</div>
+<!-- 
+		<footer>Copyright &copy; CS160</footer> -->
+	</div>
 </template>
 

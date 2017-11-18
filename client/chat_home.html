@@ -1,5 +1,4 @@
 <template name = "chat_home"> 
-    {{> header}}
     <div class = "container">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
         <ul class="user-profiles-list-basic">
@@ -17,14 +16,14 @@
             </a>
             <div class="info">
                 <p>
-                    <a href="new_chat?chatter={{username}}" style="font-family: Courier; font-size:18pt; color:black">{{username}} </a>
+                    <a href="new_chat?chatter={{username}}" style="font-family: Verdana; font-size:18pt; color:black">{{username}} </a>
                     <br>
-                    <a href="new_chat?chatter={{username}}"  style="font-family: Courier; font-size:14pt; color:black"> Bias: {{profile.bias_score}} </a>
+                    <a href="new_chat?chatter={{username}}"  style="font-family: Arial; font-size:14pt; color:black"> Bias: {{profile.bias_score}} </a>
                 </p>
             </div>
             <div class = "topics">
-                <p style="font-family: Trebuchet MS; font-size:11pt; color:black" > 
-                    <strong style = "font-family: Courier; font-size:12pt">{{username}}</strong> 
+                <p style="font-family: Verdana; font-size:11pt; color:black" > 
+                    <strong style = "font-family: Verdana; font-size:12pt">{{username}}</strong> 
                     thinks differently on:
                 </p>
                 {{#each get_topics_list username}}

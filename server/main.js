@@ -7,6 +7,7 @@ News = new Mongo.Collection('news');
 Users = Mongo.Collection.get('users');
 Topics = new Mongo.Collection('topics');
 TopicsList = new Mongo.Collection('topicsList');
+ChatHistory = new Mongo.Collection('chatHistory');
 
 Meteor.publish('Users', function(){
     return Users.find({});
@@ -36,6 +37,10 @@ Meteor.publish('TopicsList', function(){
 	return TopicsList.find({});
 });
 
+Meteor.publish('ChatHistory', function(){
+	return ChatHistory.find({});
+});
+
 Meteor.startup(() => {
 
 });
@@ -62,11 +67,24 @@ Meteor.methods({
 		var user1_update_score = Math.round((user2_score - user1_score) / 5);
 		var user2_update_score = Math.round((user1_score - user2_score) / 5);
 
-		Users.update({username: user1},{$inc: {"profile.bias_score" : user1_update_score}});
-		Users.update({username: user2},{$inc: {"profile.bias_score" : user2_update_score}});
+		Users.update({username: user1},{$set: {"profile.bias_score" : Math.max(Math.min(user1_update_score + user1_score,100),-100)}});
+		Users.update({username: user2},{$set: {"profile.bias_score" : Math.max(Math.min(user2_update_score + user2_score,100),-100)}});
 		EndChatRequests.insert({
 			roomNumber: roomNumber,
 			ack: 0
+		});
+		//insert into chat history
+		ChatHistory.insert({
+			me: user1,
+			chatter: user2,
+			createdAt: new Date(),
+			score_change: user1_update_score
+		});
+		ChatHistory.insert({
+			me: user2,
+			chatter: user1,
+			createdAt: new Date(),
+			score_change: user2_update_score
 		});
 	},
 	chat_ended: function(roomNumber, username){

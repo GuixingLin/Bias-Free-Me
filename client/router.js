@@ -19,8 +19,10 @@ Router.route('/login', function() {
 Router.route('/home', function() {
 	if (!retrieve_username_session())
 		Router.go('/login')
-	else
+	else{
 		this.render('home');
+		this.layout('header');
+	}
 });
 
 Router.route('/topic_side_submission', function(){
@@ -33,22 +35,28 @@ Router.route('/topic_side_submission', function(){
 Router.route('/chat_home', function() {
 	if (!retrieve_username_session())
 		Router.go('/login')
-	else 
+	else{
 		this.render('chat_home');
+		this.layout('header');
+	}
 });
 
 Router.route('/new_chat', function(){
 	if (!retrieve_username_session())
 		Router.go('/login')
-	else 
+	else{
 		this.render('new_chat_room');
+		this.layout('header');
+	}
 });
 
 Router.route('/news', function(){
 	if (!retrieve_username_session())
 		Router.go('/login')
-	else 
+	else{
 		this.render('news');
+		this.layout('header');
+	}
 });
 
 Router.route('/topic_selection', function(){
@@ -83,3 +91,4 @@ Meteor.subscribe('EndChatRequests');
 Meteor.subscribe('News');
 Meteor.subscribe('Topics');
 Meteor.subscribe('TopicsList');
+Meteor.subscribe('ChatHistory');

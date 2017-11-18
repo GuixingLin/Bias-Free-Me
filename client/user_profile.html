@@ -1,18 +1,30 @@
 <template name = "user_profile">
-	<div class="container">
-	    <div class="row">
-	        <div class="col-sm-2 col-md-2">
-	            <img src="http://www.petsworld.in/blog/wp-content/uploads/2014/09/adorable-cat.jpg"
-	            alt="" class="img-rounded img-responsive" height="82" width="150" />
-	        </div>
-	        <div class="col-sm-4 col-md-4">
-	            <blockquote>
-	                <p>Lovely Kitty</p> <small><cite title="Source Title">Iceland <i class="glyphicon glyphicon-map-marker"></i></cite></small>
-	            </blockquote>
-	            <p> 
-	            	<i class="glyphicon glyphicon-envelope"></i> Work in Progress
-	            </p>
-	        </div>
-	    </div>
+	<div class="chat_history_table">
+		<table>
+			<caption> Latest Chat History </caption>
+			<thead>
+		    <tr>
+		      <th scope="col">Chat With</th>
+		      <th scope="col">Score Change</th>
+		      <th scope="col">When</th>
+			</tr>
+			</thead>
+			<tbody>
+				{{#each get_chat_history}}
+					{{> chat_history_entry }}
+				{{/each}}
+			</tbody>
+		</table>
 	</div>
 </template>
+
+
+<template name = "chat_history_entry">
+	<tr>
+      <td>{{chatter}}</td>
+      <td>{{score_change}}</td>
+      <td>{{createdAt}}</td>
+    </tr>
+</template>
+
+
