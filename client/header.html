@@ -18,16 +18,28 @@
 
 		<nav class = "side_nav">
 		  <ul>
-		    <li><span style="font-family: Verdana; font-size: 11pt"><strong>User: </strong>{{show_username}}</span></li>
-		    <li><span style="font-family: Verdana; font-size: 11pt"><strong>Bias Score: </strong>{{show_bias_score}}</span></li>
+		    <li>
+		    	<span style="font-family: Verdana; font-size: 11pt; color: #6f6969"><strong>User </strong> 
+		    	<br>
+		    	<span style="font-family: Fantasy; font-size: 12pt; color: black">{{show_username}}</span>
+		    	</span>
+		    </li>
+		    <li>
+		    	<br>
+		    </li>
+		    <li>
+		    	<span style="font-family: Verdana; font-size: 11pt; color: #6f6969"><strong>Bias Rating</strong>
+		    	</span>
+		    	<br>
+		    	{{> bias_score bias_score=show_bias_score}}
+		    	{{> bias_meter_bar bias_score=show_bias_score}}
+		    </li>
 		  </ul>
 		</nav>
 
 		<div class = "content">
 		  	{{> yield}}
 		</div>
-<!-- 
-		<footer>Copyright &copy; CS160</footer> -->
 	</div>
 </template>
 

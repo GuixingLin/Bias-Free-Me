@@ -10,34 +10,99 @@ db.endChatRequests.remove({});
 //////topics
 db.topics.insert({
 	"topicName": "Tax Cut Policy",
-	"username": "saber",
+	"username": "Saber",
 	"side": "Left"
 });
 db.topics.insert({
-	"topicName": "Control of Nuclear Weapon",
-	"username": "saber",
+	"topicName": "Gun Control",
+	"username": "Saber",
 	"side": "Right"
 });
 db.topics.insert({
 	"topicName": "US Russia Relationship",
-	"username": "saber",
+	"username": "Saber",
 	"side": "Neutral"
 });
 db.topics.insert({
 	"topicName": "Tax Cut Policy",
-	"username": "caster",
+	"username": "Caster",
 	"side": "Neutral"
 });
 db.topics.insert({
-	"topicName": "Control of Nuclear Weapon",
-	"username": "caster",
+	"topicName": "Gun Control",
+	"username": "Caster",
 	"side": "Right"
 });
 db.topics.insert({
 	"topicName": "US Russia Relationship",
-	"username": "caster",
+	"username": "Caster",
 	"side": "Left"
 });
+
+db.topics.insert({
+	"topicName": "Tax Cut Policy",
+	"username": "Lancer",
+	"side": "Neutral"
+});
+db.topics.insert({
+	"topicName": "Gun Control",
+	"username": "Lancer",
+	"side": "Left"
+});
+db.topics.insert({
+	"topicName": "US Russia Relationship",
+	"username": "Lancer",
+	"side": "Right"
+});
+
+db.topics.insert({
+	"topicName": "Tax Cut Policy",
+	"username": "Rider",
+	"side": "Left"
+});
+db.topics.insert({
+	"topicName": "Gun Control",
+	"username": "Rider",
+	"side": "Right"
+});
+db.topics.insert({
+	"topicName": "US Russia Relationship",
+	"username": "Rider",
+	"side": "Right"
+});
+
+db.topics.insert({
+	"topicName": "Tax Cut Policy",
+	"username": "Berserker",
+	"side": "Left"
+});
+db.topics.insert({
+	"topicName": "Gun Control",
+	"username": "Berserker",
+	"side": "Left"
+});
+db.topics.insert({
+	"topicName": "US Russia Relationship",
+	"username": "Berserker",
+	"side": "Left"
+});
+
+db.topics.insert({
+	"topicName": "Tax Cut Policy",
+	"username": "Assassin",
+	"side": "Right"
+});
+db.topics.insert({
+	"topicName": "Gun Control",
+	"username": "Assassin",
+	"side": "Right"
+});
+db.topics.insert({
+	"topicName": "US Russia Relationship",
+	"username": "Assassin",
+	"side": "Right"
+});
+
 /////topics Lists
 db.topicsList.insert({
 	"topicName": "US Russia Relationship",
@@ -48,7 +113,7 @@ db.topicsList.insert({
 	]
 });
 db.topicsList.insert({
-	"topicName": "Control of Nuclear Weapon",
+	"topicName": "Gun Control",
 	"choices": [
 		"Left",
 		"Neutral",

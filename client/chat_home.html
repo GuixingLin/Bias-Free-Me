@@ -14,16 +14,15 @@
             <a href="new_chat?chatter={{username}}" class="user-avatar">
                 <img src="http://cdn3-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-21.jpg" width="80" height="80" alt="Profile of Adeline Yong" />
             </a>
-            <div class="info">
-                <p>
-                    <a href="new_chat?chatter={{username}}" style="font-family: Verdana; font-size:18pt; color:black">{{username}} </a>
+            <div class="info" style="margin-top: 5px;">
+                    <a href="new_chat?chatter={{username}}" style="font-family: Fantasy; font-size:14pt; text-decoration: none; color: #242e47">{{username}} </a>
                     <br>
-                    <a href="new_chat?chatter={{username}}"  style="font-family: Arial; font-size:14pt; color:black"> Bias: {{profile.bias_score}} </a>
-                </p>
+                    <a href="new_chat?chatter={{username}}"  style="font-family: Verdana; font-size:7pt; text-decoration: none; color: #242e47"><strong> Bias Rating</strong></a>
+                    {{> bias_meter_bar bias_score=profile.bias_score}}
             </div>
-            <div class = "topics">
-                <p style="font-family: Verdana; font-size:11pt; color:black" > 
-                    <strong style = "font-family: Verdana; font-size:12pt">{{username}}</strong> 
+            <div class = "topics" style="margin-top: -20px;">
+                <p style="font-family: Times; font-size:11pt; color: #242e47" > 
+                    <strong style = "font-family: Times; font-size:12pt">{{username}}</strong> 
                     thinks differently on:
                 </p>
                 {{#each get_topics_list username}}
@@ -36,12 +35,12 @@
 
 
 <template name = "topic_entry">
-        <span style="font-family: Comic Sans MS; font-size:14pt; color:grey; float:left">
+        <span style="font-family: Comic Sans MS; font-size:14pt; color: #242e47; float:left">
             <small> {{topicName}} </small> 
         </span>
         <br>
-        <span style="font-family: Times; float:right" class = "text-warning">
-            <a href="new_chat?chatter={{username}}&topicName={{topicName}}" style="text-decoration: none;"> 
+        <span style="font-family: Times; float:right; font-size:10pt;">
+            <a href="new_chat?chatter={{username}}&topicName={{topicName}}" style="text-decoration: none; color: #242e47;"> 
                 <small> Chat about it</small> 
             </a>
         </span>

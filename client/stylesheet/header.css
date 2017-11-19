@@ -1,6 +1,11 @@
 html, body {
     height: 100%;
     width: 100%;
+
+}
+
+body {
+    background-image: url(/images/light_grey.png);
 }
 
 .header {
@@ -36,6 +41,7 @@ html, body {
 
 .content {
     margin-left: 20%;
+    
     border-left: 1px solid gray;
 /*    padding: 1em;*/
     overflow: hidden;

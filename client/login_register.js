@@ -20,8 +20,8 @@ Template.login_register.events({
 		});
 		//dummy users
 		Accounts.createUser({
-		    username: "caster",
-		    password: "caster",
+		    username: "Caster",
+		    password: "Caster",
 		    profile: { bias_score: 50}
 		}, function(error){
 			if (error){
@@ -30,9 +30,49 @@ Template.login_register.events({
 			}
 		});
 		Accounts.createUser({
-		    username: "saber",
-		    password: "saber",
+		    username: "Saber",
+		    password: "Saber",
 		    profile: { bias_score: -50}
+		}, function(error){
+			if (error){
+				console.log(error.reason);
+				return;
+			}
+		});
+		Accounts.createUser({
+		    username: "Lancer",
+		    password: "Lancer",
+		    profile: { bias_score: 20}
+		}, function(error){
+			if (error){
+				console.log(error.reason);
+				return;
+			}
+		});
+		Accounts.createUser({
+		    username: "Rider",
+		    password: "Rider",
+		    profile: { bias_score: -20}
+		}, function(error){
+			if (error){
+				console.log(error.reason);
+				return;
+			}
+		});
+		Accounts.createUser({
+		    username: "Berserker",
+		    password: "Berserker",
+		    profile: { bias_score: -90}
+		}, function(error){
+			if (error){
+				console.log(error.reason);
+				return;
+			}
+		});
+		Accounts.createUser({
+		    username: "Assassin",
+		    password: "Assassin",
+		    profile: { bias_score: 90}
 		}, function(error){
 			if (error){
 				console.log(error.reason);

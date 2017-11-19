@@ -14,7 +14,13 @@ Template.new_chat_room.helpers({
     return chatter;
   },
   'get_addition_score': function(){
-    return addition_score;
+    if (addition_score < 0)
+      return "This chat pushes you to Left by " + String(Math.abs(Math.floor(addition_score/2))) + "%";
+    else if (addition_score > 0)
+      return "This chat pushes you to Right by " + String(Math.abs(Math.floor(addition_score/2))) + "%";
+    else
+      return "This chat has no influence on you";
+
   },
   'end_chat': function(){
     return EndChatRequests.find({roomNumber:roomNumber});
@@ -59,7 +65,7 @@ Template.new_chat_room.events({
   },
 
   'click #get_score_change_explanation': function(event){
-     Modal.show("suggested_topics");
+     Modal.show("score_change_explanation");
   }
 });
 

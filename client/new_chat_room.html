@@ -4,35 +4,37 @@
       <!-- <h3 class="text-center" >Chat</h3> -->
       <div class="col-md-12">
         <div class="panel panel-info">
-          <div class="panel-heading">
+          <div class="panel-heading" style="background-color: #f9f9f9">
             <table width= "100%">
               <tr>
-                <td style="text-align:center;"> 
-                  <span style="float:left">
+                <td style="text-align:center; color: #6f6969;"> 
+                  <span style="float:left;">
                     <strong>Chatting With: </strong>
                     <span id="chat_with_whom" style="font-family: Comic Sans MS; font-size: 12pt; color:grey">{{get_chatter}}
                     </span>
                   </span>
 
-                  <span style="display: inline-block; margin:0 auto;">
+                  <span style="display: inline-block; margin:0 auto; color: #6f6969">
                     <strong> Topic Picked: </strong>
                     <span id="picked_topic" style="font-family: Comic Sans MS; font-size: 12pt; color:grey">{{get_topic}}
                     </span>
                     <br>
-                    <a href="#" id="get_suggested_topics" style="text-decoration: none; font-family: Comic Sans MS; font-size: 9pt; color:black">
+                    <a href="#" id="get_suggested_topics" style="text-decoration: none; font-family: Comic Sans MS; font-size: 9pt; color:#928c8c">
                       Other suggested topics <i class="fa fa fa-newspaper-o" aria-hidden="true"></i>
                     </a>
                   </span>
 
                   <span style="float:right">
 
-                    <strong>Estimated Score Change: </strong>
-                    <span id="chat_score_estimation" style="font-family: Comic Sans MS; font-size: 12pt; color:grey">
-                      {{get_addition_score}}
+                   <!--  <strong>This chat </strong> -->
+                    <span id="chat_score_estimation" style="font-size: 12pt; color:#6f6969">
+                      <strong>
+                        {{get_addition_score}}
+                      </strong>
                     </span>
                     <br>
-                    <a href="#" id="get_score_change_explanation" style="text-decoration: none;font-family: Comic Sans MS; font-size: 9pt; color:black">
-                      How is the score change calculated <i class="fa fa-question-circle" aria-hidden="true"></i>
+                    <a href="#" id="get_score_change_explanation" style="text-decoration: none;font-family: Comic Sans MS; font-size: 9pt; color:#928c8c">
+                      How is the change calculated <i class="fa fa-question-circle" aria-hidden="true"></i>
                     </a>
                   </span>
 
