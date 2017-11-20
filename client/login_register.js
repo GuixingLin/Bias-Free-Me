@@ -80,6 +80,7 @@ Template.login_register.events({
 			}
 		});
 		Session.set('username', username);
+		Session.set('first_time_user', true);
 	},
   	'click #login_button': function(event){
   		event.preventDefault();
@@ -94,6 +95,7 @@ Template.login_register.events({
 			Session.set('username', username);
 			//Router.go('/home');
 			Router.go('/topic_side_submission');
+			Session.set('first_time_user', false);
 		});
 	},
 });

@@ -1,0 +1,45 @@
+.guide_modal {
+	text-align: center;
+}
+
+@media screen and (min-width: 700px) {
+	.guide_modal:before {
+		display: inline-block;
+		vertical-align: middle;
+		content: " ";
+		height: 100%;
+	} 
+}
+
+.guide_modal_dialog {
+	display: inline-block;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.guide_modal_header {
+	font-family: Helvetica;
+    background: #e0dcdb;
+    color: #242e47;
+}
+
+.guide_modal_body {
+	font-family: Sans-Serif;
+	color: #242e47;
+	min-height: 120px;
+}
+
+.text-introduction {
+	float: left;
+	width: 80%;
+}
+
+.image-introduction {
+	float: right;
+	width: 100px;
+}
+
+.guide_modal_footer {
+
+}
+

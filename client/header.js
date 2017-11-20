@@ -4,7 +4,9 @@ import { Mongo } from 'meteor/mongo'
 Users = Mongo.Collection.get('users');
 
 Template.header.events({
-
+	'click #help': function(event) {
+		Modal.show("guide");
+	}
 });
 
 function getScoreHTML(score){

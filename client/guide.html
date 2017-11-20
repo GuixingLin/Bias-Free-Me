@@ -1,0 +1,190 @@
+<template name="guide">
+    <div class="modal fade guide_modal">
+        <div class="modal-dialog guide_modal_dialog">
+            <div class="modal-content">
+            
+                {{#if is_tipOne}}
+                    {{> tip_one}}
+                {{else}}
+                    {{#if is_tipTwo}}
+                        {{> tip_two}}
+                    {{else}}
+                        {{#if is_tipThree}}
+                            {{> tip_three}}
+                        {{else}}
+                            {{#if is_tipFour}}
+                                {{> tip_four}}
+                            {{else}}
+                                {{#if is_tipFive}}
+                                    {{> tip_five}}
+                                {{else}}
+                                    {{#if is_tipSix}}
+                                        {{> tip_six}}
+                                    {{else}}
+                                    {{/if}}
+                                {{/if}}
+                            {{/if}}
+                        {{/if}}
+                    {{/if}}
+                {{/if}}
+
+                    
+                <div class="modal-footer guide_modal_footer">
+                    {{#if has_next}}
+                        <a href="#" role="button" class="btn btn-info" id="move_to_next_tip"> Next Tip </a>
+                    {{else}}
+                        <center> <a href="#" role="button" class="btn btn-warning" data-dismiss="modal"> Let's Chat </a> </center>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<!-- Tip One -->
+<template name="tip_one">
+
+    <div class="modal-header guide_modal_header">
+        <h4 style="font-family: Impact">What is <i><b><u> Bias Free Me </u></b></i> ? </h4>
+    </div>
+
+    <div class="modal-body  guide_modal_body">
+        <div class = "text-introduction"> 
+            <p>
+            <b span style="font-size: 12pt">An Online Chat Application </b> 
+            <span style="color: grey"> aims to help you know things better from multiple persepctives! </span>
+            <br>
+            <br>
+            <b style="font-size: 14pt; font-family: Impact">Reach out to others and share your ideas! </b> <br>
+            </p>
+        </div>
+        <div class = "image-introduction">
+           <div class = "image-introduction">
+               <img src="/images/blabla.jpg" width="110" height="88" alt="Blablabla" />
+            </div>
+        </div>
+    </div>
+
+</template>
+
+
+<template name="tip_two">
+    <div class="modal-header guide_modal_header">
+        <h4 style="font-family: Impact">How to <i><b><u> Use It </u></b></i> ? </h4>
+    </div>
+
+    <div class="modal-body  guide_modal_body">
+        <div class = "text-introduction"> 
+            <p>
+            <span style="color: grey">
+                <b style="color: black; font-size:12pt">A Bias Rating </b> will be assigned to you based on the survey.
+                <br>
+                Click  <b style="color: black; font-size:12pt"> Chat </b> on the nav bar to chat with others on those topics!
+            </span>
+            <br>
+            <br>
+            <b style="font-size: 14pt; font-family: Impact">Don't be shy! </b> <br>
+            </p>
+        </div>
+        <div class = "image-introduction">
+           <div class = "image-introduction">
+               <img style="margin-top: -10px" src="/images/chat-room-durarara.png" width="100" height="100" alt="Blablabla" />
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="tip_three">
+     <div class="modal-header guide_modal_header">
+        <h4 style="font-family: Impact">What should we <i><b><u> Talk About </u></b></i> ? </h4>
+    </div>
+
+    <div class="modal-body  guide_modal_body">
+        <div class = "text-introduction"> 
+            <p>
+            <span style="color: grey">
+                Topics you two have <b style="color:black; font-size:12pt"> Different Opinions </b> will be highlighted.
+                <br>
+                <br>
+                <i style="font-size:11pt"><b>Still confused?</b></i>
+            </span>
+            <br>
+            <b style="font-size: 14pt; font-family: Impact">No worry! Just try it out </b> <br>
+            </p>
+        </div>
+        <div class = "image-introduction">
+           <div class = "image-introduction">
+               <img style="margin-top: -10px; margin-left: -20px" src="/images/blablabla.jpg" width="110" height="110" alt="Blablabla" />
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="tip_four">
+    <div class="modal-header guide_modal_header">
+        <h4 style="font-family: Impact">What is <i><b><u> Bias Score </u></b></i> ? </h4>
+    </div>
+
+    <div class="modal-body  guide_modal_body">
+        <div class = "text-introduction"> 
+            <p>
+            <span style="color: grey">
+                Bias Score reflects <b style="color:black; font-size:12pt"> How Bias </b> you are.
+                <br>
+                Chatting with a Right Wing person will push you to Right, and vice versa.
+            </span>
+            <br>
+            <br>
+            <b style="font-size: 14pt; font-family: Impact">Don't be bias! Talk with all kinds of people! </b> <br>
+            </p>
+        </div>
+        <div class = "image-introduction">
+           <div class = "image-introduction">
+               <img style="margin-top: -10px; margin-left: -20px" src="/images/score.png" width="110" height="110" alt="Blablabla" />
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="tip_five">
+    <div class="modal-header guide_modal_header">
+        <h4 style="font-family: Impact">Can I <i><b><u> Browse News </u></b></i> ? </h4>
+    </div>
+
+    <div class="modal-body  guide_modal_body">
+        <div class = "text-introduction"> 
+            <p>
+            <span style="color: grey">
+                <b style="color:black; font-size:12pt">Sure you can!</b>
+                <br>
+                Click <b style="color:black; font-size:12pt"> News </b> on nav bar to browse news articles carefully selected by us!
+            </span>
+            <br>
+            <br>
+            <b style="font-size: 14pt; font-family: Impact">Read More, Know More! </b> <br>
+            </p>
+        </div>
+        <div class = "image-introduction">
+           <div class = "image-introduction">
+               <img style="margin-top: -10px; margin-left: -20px" src="/images/news.svg" width="110" height="110" alt="Blablabla" />
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="tip_six">
+    <div class="modal-header guide_modal_header">
+        <h4 style="font-family: Impact"><b> Congratulation! </b></h4>
+    </div>
+
+    <div class="modal-body" style="height: 80px">
+        <div> 
+            <p style="text-align: center">
+            <b style="font-size: 14pt; font-family: Impact">
+                That's all you need to know! <br>
+                Try it out!
+            </b>
+            </p>
+        </div>
+    </div>
+</template>

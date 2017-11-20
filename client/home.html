@@ -1,6 +1,9 @@
 <template name="home">
     <div align="center">
         {{> user_profile}}
+        {{#if need_to_show_guide}}
+        	{{show_guide}}
+        {{/if}}
    </div>
 </template>
 
