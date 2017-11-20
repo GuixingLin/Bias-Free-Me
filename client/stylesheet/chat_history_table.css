@@ -14,14 +14,14 @@
   line-height: 40px;
   border-collapse: separate;
   border-spacing: 0;
-  border: 2px solid #ed1c40;
+  border: 2px solid #ada8a5;
   width: 600px;
   margin: 50px auto;
   border-radius: .25rem;
 }
 
 .chat_history_table thead tr:first-child {
-  background: #ed1c40;
+  background: #242e47;
   color: #fff;
   border: none;
 }

@@ -59,7 +59,6 @@ Meteor.methods({
 			username: username,
 			roomNumber: roomNumber
 	    });
-	    console.log(text + ' inserted');
 	},
 	housekeeping: function(roomNumber, user1, user2){
 		var user1_score = Math.round(Users.findOne({username:user1}).profile.bias_score);

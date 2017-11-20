@@ -1,7 +1,14 @@
 <template name = "user_profile">
-	<div class="chat_history_table">
+
+	<div class = "evaluation">
+		{{#each evaluate_chat_history}}
+			{{> evaluate_result}}
+		{{/each}}
+	</div>
+
+	<div class="chat_history_table" style="float:left; text-align: left; margin-left: 50px;">
 		<table>
-			<caption> Latest Chat History </caption>
+			<caption> <i>Latest Chat History</i> </caption>
 			<thead>
 		    <tr>
 		      <th scope="col">Chat With</th>
@@ -27,4 +34,14 @@
     </tr>
 </template>
 
-
+<template name="evaluate_result">
+	<div style="float:left; text-align: left; margin-left: 50px">
+		<b style="font-family: Helvetica;"> 
+			<i>Based on your recent chat records, we think... </i>
+		</b>
+		<h3 style="font-family: Impact;" > {{result}} </h3>
+	</div>
+	<div style="float:right;">
+		<img src="/images/evaluation{{code}}.jpg" style="width: 250px; height: 200px">
+	</div>
+</template>

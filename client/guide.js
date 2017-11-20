@@ -5,7 +5,7 @@ import { Mongo } from 'meteor/mongo'
 
 final_tip_index = 6;
 Template.guide.onCreated(function(){
-	Session.set("current_tip", 1);
+	Session.set("current_tip", 0);
 
 	Session.set('first_time_user', false);
 });
@@ -17,6 +17,9 @@ Template.guide.events({
 });
 
 Template.guide.helpers({
+	is_tipZero: function(){
+		return Session.get("current_tip") == 0;
+	},
 	is_tipOne: function(){
 		return Session.get("current_tip") == 1;
 	},
@@ -37,5 +40,8 @@ Template.guide.helpers({
 	},
 	has_next: function(){
 		return ( final_tip_index != Session.get("current_tip"));
+	},
+	start_modal: function(){
+		return Session.get('current_tip') == 0;
 	}
 });

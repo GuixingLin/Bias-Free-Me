@@ -3,6 +3,9 @@
         <div class="modal-dialog guide_modal_dialog">
             <div class="modal-content">
             
+            {{#if is_tipZero}}
+                {{>tip_zero}}
+            {{else}}
                 {{#if is_tipOne}}
                     {{> tip_one}}
                 {{else}}
@@ -27,17 +30,33 @@
                         {{/if}}
                     {{/if}}
                 {{/if}}
-
+            {{/if}}
                     
                 <div class="modal-footer guide_modal_footer">
-                    {{#if has_next}}
-                        <a href="#" role="button" class="btn btn-info" id="move_to_next_tip"> Next Tip </a>
+                    {{#if start_modal}}
+                        <center> <a href="#" role="button" class="btn btn-warning" id="move_to_next_tip"> Start </a> </center>
                     {{else}}
-                        <center> <a href="#" role="button" class="btn btn-warning" data-dismiss="modal"> Let's Chat </a> </center>
+                        {{#if has_next}}
+                            <a href="#" role="button" class="btn btn-info" id="move_to_next_tip"> Next Tip </a>
+                        {{else}}
+                            <center> <a href="#" role="button" class="btn btn-warning" data-dismiss="modal"> Let's Chat </a> </center>
+                        {{/if}}
                     {{/if}}
                 </div>
             </div>
         </div>
+    </div>
+</template>
+
+<!-- Tip Zero -->
+<template name="tip_zero">
+
+    <div class="modal-header guide_modal_header">
+        <h3 style="font-family: Impact"><center><b>Welcome!</b></center></h3>
+    </div>
+
+    <div class="modal-body" style="max-height: 60pt;">
+        <center> <b span style="font-size: 14pt"> Here are a few tips for you! </b> </center>
     </div>
 </template>
 
@@ -174,17 +193,13 @@
 
 <template name="tip_six">
     <div class="modal-header guide_modal_header">
-        <h4 style="font-family: Impact"><b> Congratulation! </b></h4>
+        <h3 style="font-family: Impact"><center><b>Congratulation!</b></center></h3>
     </div>
 
-    <div class="modal-body" style="height: 80px">
-        <div> 
-            <p style="text-align: center">
-            <b style="font-size: 14pt; font-family: Impact">
-                That's all you need to know! <br>
-                Try it out!
+    <div class="modal-body" style="max-height: 60pt;">
+        <center> 
+            <b span style="font-size: 14pt"> That's all you need to know! Try it out!
             </b>
-            </p>
-        </div>
+         </center>
     </div>
 </template>
