@@ -17,9 +17,31 @@ Template.login_register.events({
 				console.log(error.reason);
 				return;
 			}
+			Session.set('username', username);
+			Session.set('first_time_user', true);
+			add_dummy_users();
 		});
-		//dummy users
-		Accounts.createUser({
+	},
+  	'click #login_button': function(event){
+  		event.preventDefault();
+		var username = document.getElementById("username_input").value;
+		var password = document.getElementById("password_input").value;
+		Meteor.loginWithPassword(username, password, function(error){
+			if (error){
+				console.log(error.reason);
+				return;
+			}
+			console.log("successfully logged in");
+			Session.set('username', username);
+			Session.set('first_time_user', false);
+			Router.go('/home');
+		});
+	},
+});
+    
+
+var add_dummy_users = function(){
+	Accounts.createUser({
 		    username: "Caster",
 		    password: "Caster",
 		    profile: { bias_score: 50}
@@ -79,24 +101,12 @@ Template.login_register.events({
 				return;
 			}
 		});
-		Session.set('username', username);
-		Session.set('first_time_user', true);
-	},
-  	'click #login_button': function(event){
-  		event.preventDefault();
-		var username = document.getElementById("username_input").value;
-		var password = document.getElementById("password_input").value;
-		Meteor.loginWithPassword(username, password, function(error){
-			if (error){
-				console.log(error.reason);
-				return;
-			}
-			console.log("successfully logged in");
-			Session.set('username', username);
-			//Router.go('/home');
-			Router.go('/topic_side_submission');
-			Session.set('first_time_user', false);
-		});
-	},
-});
-    
+};
+
+function wait(ms){
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
+  }
+};

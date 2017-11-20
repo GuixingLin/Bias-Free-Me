@@ -10,9 +10,12 @@ Router.route('/', function () {
 });
 
 Router.route('/login', function() {
-	if (retrieve_username_session())
-		Router.go('/topic_side_submission');
-	else
+	if (retrieve_username_session()){
+		if (Session.get('first_time_user') == false)
+			Router.go('/home');
+		else
+			Router.go('/topic_side_submission');
+	}else
 		this.render('login_register');
 });
 
