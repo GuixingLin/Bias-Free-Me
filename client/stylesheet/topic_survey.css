@@ -1,0 +1,91 @@
+.continput {
+  background: #ecf0f1;
+  color: #8e44ad;
+}
+.continput .center-on-page {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%,0%);
+}
+
+.continput .ID0 input[type="radio"],
+.continput .ID1 input[type="radio"],
+.continput .ID2 input[type="radio"],
+.continput .ID4 input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  width: 24px;
+  height: 24px;
+}
+
+.continput .ID0 label,
+.continput .ID1 label,
+.continput .ID2 label,
+.continput .ID4 label {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 10px;
+  line-height: 36px;
+  cursor: pointer;
+}
+
+.continput .ID0 label::before,
+.continput .ID1 label::before,
+.continput .ID2 label::before,
+.continput .ID4 label::before {
+  content: " ";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #8e44ad;
+  border-radius: 4px;
+  z-index: -1;
+}
+
+.continput .ID0 input[type="radio"] + label::before,
+.continput .ID1 input[type="radio"] + label::before,
+.continput .ID2 input[type="radio"] + label::before,
+.continput .ID4 input[type="radio"] + label::before {
+  border-radius: 18px;
+}
+
+/* Checked */
+.continput .ID0 input[type="radio"]:checked + label,
+.continput .ID1 input[type="radio"]:checked + label,
+.continput .ID2 input[type="radio"]:checked + label,
+.continput .ID4 input[type="radio"]:checked + label {
+  padding-left: 10px;
+  color: #fff;
+}
+
+.continput .ID0 input[type="radio"]:checked + label::before,
+.continput .ID1 input[type="radio"]:checked + label::before,
+.continput .ID2 input[type="radio"]:checked + label::before,
+.continput .ID4 input[type="radio"]:checked + label::before {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #8e44ad;
+}
+
+/* Transition */
+.continput .ID0 label,
+.continput .ID0 label::before,
+.continput .ID1 label,
+.continput .ID1 label::before,
+.continput .ID2 label,
+.continput .ID2 label::before,
+.continput .ID4 label,
+.continput .ID4 label::before {
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}

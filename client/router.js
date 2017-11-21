@@ -14,7 +14,7 @@ Router.route('/login', function() {
 		if (Session.get('first_time_user') == false)
 			Router.go('/home');
 		else
-			Router.go('/topic_side_submission');
+			Router.go('/topic_survey');
 	}else
 		this.render('login_register');
 });
@@ -28,11 +28,11 @@ Router.route('/home', function() {
 	}
 });
 
-Router.route('/topic_side_submission', function(){
+Router.route('/topic_survey', function(){
 	if (!retrieve_username_session())
 		Router.go('/login')
 	else 
-		this.render('topic_side_submission');
+		this.render('topic_survey');
 });
 
 Router.route('/chat_home', function() {

@@ -1,0 +1,86 @@
+<template name="topic_survey">
+	<div class="continput" style="width: 100%">
+		<div class="center-on-page">
+			<center>
+	  			<h2 style="border-radius: 10px; background-color: #8e44ad; color: #fff;"> Survey Form</h2>
+	  			<h5> Pick which side you belong to for each topic</h5>
+	  		</center>
+
+  			{{#each get_topics_list}}
+  				{{> topic}}
+  			{{/each}}
+
+  			{{> self_evaluation}}
+
+  			<hr style="
+				height: 6px;
+				background: url(http://ibrahimjabbari.com/english/images/hr-12.png) repeat-x 0 0;
+			    border: 0;">
+			<center>
+	  			<button id="survey_form_submit" 
+	  			style="width: 120px; height: 60px; font-size: 14pt; margin-bottom: 30px; background-color: #8e44ad; color:#fff; border-radius: 10px">
+	  				Submit
+	  			</button>
+	  		</center>
+		</div>
+	</div>
+</template>
+
+<template name="topic">
+	<hr style="
+	height: 6px;
+	background: url(http://ibrahimjabbari.com/english/images/hr-12.png) repeat-x 0 0;
+    border: 0;">
+
+	<h2 style="font-family:Helvetica"> <b> {{topicName}} </b> </h2>
+
+	<form class="ID{{ID}}" style="margin-bottom: 20px; margin-top: 20px">
+		<div class = "Left" style="display: inline-block; margin-right: 160px">
+		  <input type="radio" name="{{topicName}}" id="rb1{{topicName}}" value="Left" />
+		  <label for="rb1{{topicName}}">Left</label>
+		</div>
+	  
+	  	<div class="Neutral" style="display: inline-block; margin-right: 160px">
+		  <input type="radio" name="{{topicName}}" id="rb2{{topicName}}" value="Neutral" checked/>
+		  <label for="rb2{{topicName}}">Neutral</label>
+		</div>
+
+		<div class="Right" style="display: inline-block;">
+		  <input type="radio" name="{{topicName}}" id="rb3{{topicName}}" value="Right" />
+		  <label for="rb3{{topicName}}">Right</label>
+		</div>
+	</form>
+</template>
+
+<template name="self_evaluation">
+	<hr style="
+	height: 6px;
+	background: url(http://ibrahimjabbari.com/english/images/hr-12.png) repeat-x 0 0;
+    border: 0;">
+
+	<h2 style="font-family:Helvetica"> <b> Which <i><u>Side</u></i> do you think yourself belongs to? </b> </h2>
+
+	<form class="ID4" style="margin-bottom: 35px; margin-top: 20px">
+
+		<div style="display: inline-block; margin-right: 71px">
+		  <input type="radio" name="self_evaluation" id="rb1" value=-30 />
+		  <label for="rb1">Left ++</label>
+		</div>
+
+		<div style="display: inline-block; margin-right: 71px" >
+		  <input type="radio" name="self_evaluation" id="rb2" value=-15 checked/>
+		  <label for="rb2">Left +</label>
+		</div>
+
+		<div style="display: inline-block; margin-right: 69px">
+		  <input type="radio" name="self_evaluation" id="rb3" value=15 />
+		  <label for="rb3">Right +</label>
+		</div>
+
+		<div style="display: inline-block;">
+		  <input type="radio" name="self_evaluation" id="rb4" value=30 />
+		  <label for="rb4">Right ++</label>
+		</div>
+	</form>
+
+</template>

@@ -7,7 +7,18 @@ ChatHistory = new Mongo.Collection("chatHistory");
 
 Template.user_profile.helpers({
 	get_chat_history: function(){
-		return ChatHistory.find({me:Session.get("username")}, {limit: 5, sort:{createdAt: -1}});
+		var result = ChatHistory.find({me:Session.get("username")}, {limit: 5, sort:{createdAt: -1}});
+		var output = [];
+		result.forEach(function(x){
+			var which_side = "";
+			if (x.score_change < 0)
+				which_side = "Left + " + Math.floor(Math.abs(x.score_change)/2).toString() + "%";
+			else
+				which_side = "Right + " + Math.floor(Math.abs(x.score_change)/2).toString() + "%";
+			var date = x.createdAt.toISOString().slice(0,10);
+			output.push({"chatter":x.chatter, "score_change": which_side, "createdAt": date});
+		});
+		return output;
 	},
 	evaluate_chat_history: function(){
 		var history = ChatHistory.find({me:Session.get("username")}, {limit: 5, sort:{createdAt: -1}});
