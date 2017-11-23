@@ -14,6 +14,7 @@ Template.login_register.events({
 		    profile: { bias_score: 0}
 		}, function(error){
 			if (error){
+				
 				console.log(error.reason);
 				return;
 			}
@@ -28,6 +29,7 @@ Template.login_register.events({
 		var password = document.getElementById("password_input").value;
 		Meteor.loginWithPassword(username, password, function(error){
 			if (error){
+				alert(error.reason);
 				console.log(error.reason);
 				return;
 			}

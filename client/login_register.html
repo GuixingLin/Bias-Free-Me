@@ -1,15 +1,29 @@
 <template name="login_register">
-    <div align = "center">
-    	<p>Welcom to "Bias Free Me"</p>
-            <form id="login_register_form">
-                <p align="center">Username: <input type="text" id="username_input" /></p>
-                <p align="center">Password: <input type="password" id="password_input" /></p>
-            </form>
-        <p>
-        	<button type="button" id="sign_up_button">Sign up</button>
-        	<button type="button" id="login_button">Login</button>
-        </p>
+
+    
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <h1 class="text-center login-title">Welcom to "Bias Free Me</h1>
+            <div class="account-wall">
+                <img class="profile-img" src="/images/user.png"
+                    alt="">
+                <form class="form-signin">
+                <input type="text" class="form-control" placeholder="Username" id="username_input" required autofocus>
+                <input type="password" class="form-control" placeholder="Password" id="password_input" required>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" id="login_button">
+                    Sign in</button>
+                <label class="checkbox pull-left">
+                    <input type="checkbox" value="remember-me">
+                    Remember me
+                </label>
+                <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
+                </form>
+            </div>
+            <a href="#" class="text-center new-account" id="sign_up_button">Create an account </a>
+        </div>
     </div>
+</div>
 </template>
 
 
