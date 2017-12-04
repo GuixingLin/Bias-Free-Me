@@ -131,20 +131,25 @@ db.topicsList.insert({
 
 //////news
 db.news.insert({
-	"src": "/images/sands-of-life.jpg",
-	"title" : "NY Times",
-	"link" : "https://www.nytimes.com/",
-	"bias_score" : 10
-});
-db.news.insert({
-	"src": "/images/sands-of-life.jpg",
-	"title" : "WSJ",
-	"link" : "https://www.wsj.com/",
+	"src": "/images/news_1_left.jpg",
+	"title" : "Mueller Removed Top Agent in Russia Inquiry Over Possible Anti-Trump Texts",
+	"link" : "https://www.allsides.com/news/2017-12-03-0806/mueller-removed-top-agent-russia-inquiry-over-possible-anti-trump-texts",
+	"abstract" : "The special counsel, Robert S. Mueller III, removed a top F.B.I. agent this summer from his investigation into Russian election meddling after...",
 	"bias_score" : -10
 });
+
 db.news.insert({
-	"src": "/images/sands-of-life.jpg",
-	"title" : "Reddit",
-	"link" : "https://www.reddit.com/",
+	"src": "/images/news_1_neutral.jpg",
+	"title" : "ABC's Brian Ross suspended for erroneous report on Flynn plea deal",
+	"link" : "https://www.allsides.com/news/2017-12-03-0825/abcs-brian-ross-suspended-erroneous-report-flynn-plea-deal",
+	"abstract" : "US news network ABC has suspended its chief investigative reporter after he made a serious error about Donald Trump's former top aide...",
 	"bias_score" : 0
+});
+
+db.news.insert({
+	"src": "/images/news_1_right.jpg",
+	"title" : "House Intelligence chairman says he’s going to hold the FBI in contempt of Congress",
+	"link" : "https://www.allsides.com/news/2017-12-03-0846/house-intelligence-chairman-says-he%E2%80%99s-going-hold-fbi-contempt-congress-%E2%80%94-here%E2%80%99s",
+	"abstract" : "Rep. Devin Nunes (R-Calif.), chairman of the House Intelligence Committee, has instructed his staff to...",
+	"bias_score" : 10
 });

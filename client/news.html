@@ -10,17 +10,17 @@
 <template name = "article">
 	<li>
         <a href="{{link}}">
-            <img src="/images/sands-of-life.jpg" alt="Industrial Mech" />
+            <img src={{src}} alt="Industrial Mech" />
         </a>
         <div>
-            <h2>
-                <a href="{{link}}" style="font-family: Helvetica; font-size: 15pt;"><b><u>{{title}}</u></b></a>  
+            <p class="title" style="margin-top: -10px">
+                <a href="{{link}}" style="font-family: Helvetica; font-size: 11pt; text-decoration: none; color: #242e47;"><b><u>{{title}}</u></b></a>  
                 <br>
                 <span style="font-family: Helvetica; font-size: 10pt; color:#242e47;"><i><b>Bias Rating:</b> {{bias_score_}}</i> </span>
-            </h2>
+            </p>
             
             <p>
-            	Come, night, come, Romeo, come, thou day in night, For thou wilt lie upon the wings of night Whiter than new snow on a raven's back.
+            	{{abstract}}
 			</p>
             <a href="#" class="haveRead" id="have_read">Have Read</a>
         </div>
