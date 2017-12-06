@@ -4,6 +4,7 @@ Yao Yuan, Yidan Zhang, Yifu Guo, Lincoln Guixing Lin
 
 
 # team
-* a
-![yidanzhang](images/yidanzhang.png "Logo Title Text 1")
-* b
+* Yidan Zhang
+![yidanzhang](images/yidanzhang.png)
+* Yifu Guo
+![yifuguo](images/yifuguo.png)
