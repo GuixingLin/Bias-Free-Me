@@ -14,8 +14,8 @@ Yao Yuan, Yidan Zhang, Yifu Guo, Lincoln Guixing Lin
   &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
   <img src="images/guixinglin.png" width="150"/>
     <figure>
-      <img src="images/yidanzhang.png" alt="yidanzhang"/>
-    <figcaption align="center">Yidan Zhang</figcaption>
+      <img src="images/yidanzhang.png" alt="yidanzhang" width="150"/>
+    <figcaption>&nbsp &nbsp Yidan Zhang</figcaption>
   </figure>
 </p>
 <div style="text-align:center">
