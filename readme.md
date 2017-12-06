@@ -4,13 +4,10 @@ Yao Yuan, Yidan Zhang, Yifu Guo, Lincoln Guixing Lin
 
 
 # team
-![yidanzhang](images/yidanzhang.png)
-![yifuguo](images/yifuguo.png)
-![yaoyuan](images/yaoyuan.png)
-![guixinglin](images/guixinglin.png)
 
-
-<p>
-  <img src="images/yidanzhang" width="350"/>
-  <img src="images/yifuguo" width="350"/>
+<p><align="center">
+  <img src="images/yidanzhang.png" width="150"/>
+  <img src="images/yifuguo.png" width="150"/>
+  <img src="images/yaoyuan.png" width="150"/>
+  <img src="images/guixinglin.png" width="150"/>
 </p>
